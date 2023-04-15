@@ -1,0 +1,92 @@
+:root {
+  --backgrond: #000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+
+body {
+   margin: 0px;
+   padding: 0px;
+}
+
+a {
+   text-decoration: none;
+   color: var(--text-color);
+}
+
+li {
+   list-style: none;
+}
+
+body {
+   background-image: url(./assets/Group\ 7.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   font-family: 'Manrope', sans-serif;
+}
+
+.header {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   justify-items:  center;
+   margin: 50px 40px;
+}
+
+.menuDesktop {
+   display: flex;
+   gap: 43px;
+   font-size: 14px;
+   font-weight: 400;
+}
+
+button {
+   color: var(--text-color);
+   border-radius: 6px;
+   border: 1px solid var(--button);
+   background: transparent;
+   text-transform: uppercase;
+   padding: 11px 38px;
+   font-size: 11px;
+   font-weight: 700;
+}
+
+.section {
+   display: grid;
+   justify-items: center;
+}
+
+h1{
+   color: var(--text-color);
+   font-weight: 700;
+   font-size: clamp(3.12rem, 4vw, 5.3rem);
+   margin: 0;
+}
+
+.stroke {
+   text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+   font-weight: 700;
+   font-size: clamp(3.12rem, 4vw, 5.3rem);
+   margin: 0;
+}
+
+.section img {
+   width: 60%;
+   object-fit: 100vw 100vh;
+   -webkit-transition: 1s ease-out;
+   -moz-transition: 1s ease-out;
+   -o-transition: 1s ease-out;
+   transition: all 1s ease-in-out;
+} 
+
+.section img:hover{
+   transform: scale(1.1);
+}
+
+@media (min-width: 769px) {
+   body {
+      overflow: hidden;
+   }
+}
