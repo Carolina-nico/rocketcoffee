@@ -7,11 +7,6 @@
   --text-color-menu-mobile: #E1E1E6;
 }
 
-body {
-   margin: 0px;
-   padding: 0px;
-}
-
 a {
    text-decoration: none;
    color: var(--text-color);
@@ -26,6 +21,9 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    font-family: 'Manrope', sans-serif;
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
 }
 
 .header {
@@ -37,9 +35,13 @@ body {
 
 .menuDesktop {
    display: flex;
-   gap: 43px;
-   font-size: 14px;
+   gap: clamp(0.678rem, 7%, 3rem);
+   justify-content: space-around;
+   width: -webkit-fill-available;
+   padding: 0px;
+   font-size: clamp(.678rem, 1vw, 1rem);
    font-weight: 400;
+   white-space: nowrap;
 }
 
 button {
@@ -49,8 +51,14 @@ button {
    background: transparent;
    text-transform: uppercase;
    padding: 11px 38px;
-   font-size: 11px;
+   font-size: clamp(.500rem, 1vw, .700rem);
    font-weight: 700;
+   cursor: pointer;
+   transition: transform .4s;
+}
+
+button:hover {
+   transform: scale(1.1);
 }
 
 .section {
@@ -73,7 +81,8 @@ h1{
 }
 
 .section img {
-   width: 60%;
+   width: 50%;
+   margin-top: 90px;
    object-fit: 100vw 100vh;
    -webkit-transition: 1s ease-out;
    -moz-transition: 1s ease-out;
@@ -85,8 +94,79 @@ h1{
    transform: scale(1.1);
 }
 
+@media (max-width: 1400px) {
+   button {
+      padding: 10px 30px;
+   }
+
+   nav img {
+      width: 40px;
+      height: 45px;
+   }
+}
+
+@media (max-width: 1000px) {
+   button {
+      padding: 3px 20px;
+   }
+}
+
+@media (max-width: 800px) {
+   button {
+      margin-left: 70px;
+   }
+
+   nav img {
+      width: 35px;
+      height: 40px;
+      margin-right: 50px;
+   }
+}
+
 @media (min-width: 769px) {
    body {
       overflow: hidden;
    }
+}
+
+@media (max-width: 710px) {
+  .header {
+   background-image: url(./assets/logo-mobile.svg);
+   background-repeat: no-repeat;
+  }
+
+  .header img {
+   opacity: 0;
+} 
+
+.menu {
+   display: inline-block;
+   z-index: 99999;
+   cursor: pointer;
+}
+
+.mobile .line1 .line2 {
+   width: 35px;
+   height: 5px;
+   background-color: #8257E5;
+   margin: 6px 0;
+   transition: 0.4s;
+}
+
+.mobile .line1 .line2 {
+   width: 20px;
+   height: 5px;
+   background-color: #8257E5;
+   margin: 6px 0;
+   transition: 0.4s;
+}
+
+.mobile .line1 {
+   transform: translate(0, 11px) rotate(-45deg);
+}
+
+.mobile .line2 {
+   transform: translate(0, -11px) rotate(45deg);
+}
+
 }
